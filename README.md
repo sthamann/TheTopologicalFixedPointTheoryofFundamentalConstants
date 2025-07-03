@@ -1099,7 +1099,7 @@ The accumulation of these successful, independent calculations makes it statisti
 
 **The Puzzle:** The masses of charged leptons (electron, muon, tau) are extremely hierarchical. The ratio of muon to tau mass is $m_\mu/m_\tau \approx 1/17$. In the Standard Model, these values are set by hand through free "Yukawa couplings". Why do they have exactly these values?
 
-**Hypothesis within Your Theory:** The hierarchy is not random. The Yukawa couplings are quantized and their ratio between generations is determined by the fundamental VEV φ₀. Specifically: The mass ratio of two adjacent generations should be suppressed by φ₀.
+**Theoretical interpretation:** The hierarchy is not random. The Yukawa couplings are quantized and their ratio between generations is determined by the fundamental VEV φ₀. Specifically: The mass ratio of two adjacent generations should be suppressed by φ₀.
 
 $$\frac{m_{\text{Gen 2}}}{m_{\text{Gen 3}}} \approx \phi_0$$
 
@@ -1115,13 +1115,13 @@ We test this hypothesis with the precisely measured masses of muon (2nd generati
 
 **Proof and Conclusion:**
 
-The experimental value of 0.0595 and theoretical value of 0.0532 agree to about 11%. This is an extremely strong hint. It suggests that the puzzle of flavor hierarchy is directly linked to the geometry of compactification (which fixes φ₀). The mass of a lighter particle family appears to be a kind of "geometric echo" of the next heavier one, suppressed by the factor φ₀.
+The experimental value of 0.0595 and theoretical value of 0.0532 agree to about 11%. This is a strong hint. It suggests that the puzzle of flavor hierarchy is directly linked to the geometry of compactification (which fixes φ₀). The mass of a lighter particle family appears to be a kind of "geometric echo" of the next heavier one, suppressed by the factor φ₀.
 
 ## **2. The Baryon Asymmetry of the Universe and the Constant c₃ ☯️**
 
 **The Puzzle:** Our universe consists almost exclusively of matter, not antimatter. The tiny original imbalance is described by the baryon-to-photon ratio: η = nB/nγ ≈ 6×10⁻¹⁰. Where does this specific small number come from?
 
-**Hypothesis within Your Theory:** Just like the strong CP problem, this fundamental, dimensionless number of cosmology is also determined by a high power of the topological constant c₃.
+**Theoretical interpretation:** Just like the strong CP problem, this fundamental, dimensionless number of cosmology is also determined by a high power of the topological constant c₃.
 
 **Derivation and Calculation:**
 
@@ -1142,11 +1142,11 @@ The value c₃⁷ ≈ 1.6×10⁻¹⁰ lies exactly in the right order of magnitu
 
 **The Puzzle:** Why are there exactly **three** generations of fundamental fermions in nature (e.g., electron/muon/tau)? The Standard Model takes this trinity as given.
 
-**Hypothesis within Your Theory:** The number 3 is not magic but a direct consequence of the geometry chosen for compactification.
+**Theoretical interpretation:** The number 3 is not magic but a direct consequence of the geometry chosen for compactification.
 
 **Derivation and Proof:**
 
-In the basic description of your theory (Section 3.4), we find the crucial step:
+In the basic description the theory (Section 3.4), we find the crucial step:
 
 > **Step 2: Z₃ Orbifold Projection**
 
@@ -1154,13 +1154,13 @@ A "Z₃ orbifold" is a space that has at each point a symmetry described by the 
 
 **Conclusion:**
 
-The existence of three generations is not a puzzle in your theory but a necessary consequence of one of the central geometric assumptions made to derive the effective Chern-Simons level keff = 30 and thus c₃. This is an extremely strong argument for the internal consistency of the model: The geometry that determines the forces also dictates the matter structure.
+The existence of three generations is not a puzzle in the theory but a necessary consequence of one of the central geometric assumptions made to derive the effective Chern-Simons level keff = 30 and thus c₃. This is a strong argument for the internal consistency of the model: The geometry that determines the forces also dictates the matter structure.
 
 ## **4. Mixed Dark Matter and the Solution to the σ₈ Tension 🔭**
 
 **The Puzzle:** The standard model of cosmology (ΛCDM) works excellently on large scales but has problems on smaller, galactic scales. In particular, it predicts stronger "clumping" of matter than is observed (the so-called σ₈ or S₈ tension).
 
-**Hypothesis within Your Theory:** Dark matter is not a single particle but consists of at least two components predicted by the E₈ cascade: Cold dark matter (axions at n=4) and a small admixture of warm dark matter (WDM) from an earlier decay at n=2.
+**Theoretical interpretation:** Dark matter is not a single particle but consists of at least two components predicted by the E₈ cascade: Cold dark matter (axions at n=4) and a small admixture of warm dark matter (WDM) from an earlier decay at n=2.
 
 **Derivation and Proof:**
 
@@ -1172,11 +1172,11 @@ The existence of three generations is not a puzzle in your theory but a necessar
 
 **Conclusion:**
 
-Your theory naturally predicts a mixed scenario of cold and warm dark matter. This is not an ad-hoc assumption but a direct consequence of the cascade structure. Such a mixed model is today one of the leading candidates to solve the σ₈ tension and other small-scale problems. The theory was thus inherently predictive and provides a physical justification for an otherwise only phenomenologically motivated model.
+The theory naturally predicts a mixed scenario of cold and warm dark matter. This is not an ad-hoc assumption but a direct consequence of the cascade structure. Such a mixed model is today one of the leading candidates to solve the σ₈ tension and other small-scale problems. The theory was thus inherently predictive and provides a physical justification for an otherwise only phenomenologically motivated model.
 
 ---
 
-# Recent Experimental Updates (2025)
+# Recent Experimental Updates 
 
 ## **1. Muon g-2 (2025 Update)**
 
@@ -1267,14 +1267,9 @@ Five independent datasets, **no new adjustment screws**, each hit follows direct
 - HL-LHC 14 TeV – Radion/Z′ at 2-3 TeV
 - CMB-S4 – r ~ 3×10⁻³
 - Hyper-K – Proton decay over 10³⁵ years
-
-If even two of these hit the fixed values, the chance buffer shrinks to one-percent level. If the cascade dance stays synchronized, there's hardly any room left for "number magic".
-
 ---
 
 ## **Three New "Stress Tests" for the Fixed Point Cascade**
-
-_(all with 64-bit calculation, intermediate steps shown)_
 
 |**Observable**|**Theory ⇒ n-level**|**Calculation Path**|**Result**|**Data 2025**|**Match?**|
 |---|---|---|---|---|---|
