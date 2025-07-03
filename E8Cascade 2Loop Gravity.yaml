@@ -1,0 +1,135 @@
+---
+Author: "E8 Cascade v2 – 2‑Loop + Gravity Mock"
+Date: 2025‑07‑02
+Name: E8Cascade2LoopGravity
+# ------------------------------------------------------------
+#  Purpose
+#  – 2‑Loop RGEs for the full E8‑cascade mini‑model
+#  – Threshold decoupling à la Kaskade (Σ_F, N_R, Φ)
+#  – Dummy R^3 term via gauge‑singlet spurion to mock α³‑piece
+# ------------------------------------------------------------
+Settings:
+  LoopOrder: 2                  # 2-loop RGEs
+  ExportBetaFunctions: true
+
+# ------------------------------------------------------------
+# Thresholds for cascade decoupling
+# ------------------------------------------------------------
+Thresholds:
+  - Scale: MSigma
+    Fields: [SigmaF]            # n = 6
+
+  - Scale: MNR
+    Fields: [NR]                # n = 5
+
+  - Scale: MPhi
+    Fields: [phiR, phiI]        # n = 4
+
+# ------------------------------------------------------------
+Groups: {U1Y: U1, SU2L: SU2, SU3c: SU3}
+
+# ------------------------------------------------------------
+Fermions:
+  Q   : {Gen: 3,  Qnb: {U1Y:  1/6, SU2L: 2, SU3c: 3}}
+  L   : {Gen: 3,  Qnb: {U1Y: -1/2, SU2L: 2}}
+  uR  : {Gen: 3,  Qnb: {U1Y:  2/3, SU3c: 3}}
+  dR  : {Gen: 3,  Qnb: {U1Y: -1/3, SU3c: 3}}
+  eR  : {Gen: 3,  Qnb: {U1Y: -1}}
+  # --- BSM fermions --------------------------------------------------------
+  SigmaF : {Gen: 1, Qnb: {U1Y: 0, SU2L: 3, SU3c: 1}}     # EW triplet
+  NR     : {Gen: 3, Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}}     # RH neutrinos
+
+# ------------------------------------------------------------
+RealScalars:
+  phiR : {Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}}               # PQ‑scalar (Re)
+  phiI : {Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}}               # PQ‑scalar (Im)
+  # Gravity spurion R3 – mocks R³ → α³ in β_α
+  R3   : {Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}, External: True}  # pure spurion, no dynamics
+
+ComplexScalars:
+  H    : {RealFields: [Pi, Sigma], Norm: 1/sqrt(2), Qnb: {U1Y: 1/2, SU2L: 2}}
+
+# ------------------------------------------------------------
+Potential:
+  Definitions:
+    Htilde[i] : Eps[i,j]*Hbar[j]
+
+  Yukawas:
+    Yu  : Qbar[i,a] Htilde[i] uR[a]
+    Yd  : Qbar[i,a] H[i]       dR[a]
+    Ye  : Lbar[i]   H[i]       eR
+    yN  : Lbar[i]   Htilde[i]  NR            # seesaw
+
+  QuarticTerms:
+    lambda    : (Hbar[i] H[i])**2
+    lPhi      : (phiR**2 + phiI**2)**2
+    lHphi     : (Hbar[i] H[i])*(phiR**2 + phiI**2)
+  
+  TrilinearTerms:
+    cR3       : R3 * (Hbar[i] H[i])          # mockt α³-Effekt
+
+  ScalarMasses:
+    mu2       : -Hbar[i] H[i]
+    MPhi      : phiR*phiR + phiI*phiI         # PQ scalar mass for threshold
+
+# ------------------------------------------------------------
+Vevs:
+  vSM : Pi[2]     # 246 GeV
+  vPQ : phiR      # 1.0e16 GeV (decoupling scale)
+  # no VEV for R3 ⇒ purely spurionic
+
+# ------------------------------------------------------------
+Parameters:
+  # --- Standard input ------------------------------------------------------
+  - {name: vSM,      value: 2.46e2}
+  - {name: vPQ,      value: 1.0e16}
+  - {name: MPl,      value: 1.22e19}
+  # Mass parameters for thresholds
+  - {name: MSigma,   value: 1.0e3}     # für n = 6 Schwelle (TeV)
+  - {name: MNR,      value: 1.0e15}    # für n = 5 Schwelle (Seesaw)
+  - {name: MPhi,     value: 1.0e16}    # für n = 4 Schwelle (PQ/Axion)
+  # gauge couplings at M_Z (SM‑like)
+  # NOTE: g1 needs external rescaling by sqrt(3/5) for GUT normalization
+  - {name: g1,  value: 0.357}          # → g1_GUT = 0.357 * sqrt(3/5) ≈ 0.462
+  - {name: g2,  value: 0.652}
+  - {name: g3,  value: 1.221}
+  # Yukawas (third generation shown, rest negligible here)
+  - {name: Yu33, value: 0.95}
+  - {name: Yd33, value: 0.024}
+  - {name: Ye33, value: 0.010}
+  - {name: yN,   value: 0.10}
+  # Quartics – tuned for vacuum stability
+  - {name: lambda,  value: 0.130}
+  - {name: lPhi,    value: 0.10}
+  - {name: lHphi,   value: 0.01}
+  # Gravity portal coupling
+  - {name: cR3,     value: 0.01}  # (0 … 0.02) ≈ (α_exp – α_c) Skala
+
+Substitutions: {
+  # Rename gauge couplings
+  g_U1Y : g1,
+  g_SU2L : g2,
+  g_SU3c : g3
+}
+
+# ------------------------------------------------------------
+# POST-PROCESSING NOTES:
+# 
+# 1. Hypercharge normalization:
+#    PyR@TE gives b1 = 41/6. For GUT normalization (b1 = 41/10):
+#    - g1_GUT = sqrt(3/5) * g1_PyRATE
+#    - β(g1_GUT) = (3/5) * β(g1_PyRATE)
+#
+# 2. Thresholds:
+#    If PyR@TE doesn't apply thresholds automatically, implement
+#    in your numerical solver by switching off β-functions below
+#    the respective mass scales.
+#
+# 3. Mass parameters:
+#    MSigma, MNR cannot be declared in the Potential due to PyR@TE
+#    limitations. They are defined as Parameters and referenced in
+#    the Thresholds block, but actual implementation must be done
+#    in the numerical solver.
+# ------------------------------------------------------------
+
+...

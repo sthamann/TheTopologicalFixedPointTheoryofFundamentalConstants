@@ -1,0 +1,84 @@
+# =========================================================
+#  Fixpunkt-Kaskade – Minimal-Version (1-Loop Test)
+#  ---------------------------------------------------------
+#  • Standard-Modell wird per Include hereingeholt
+#  • Zusätzliche Felder:   – PQ-Skalar  Φ      (n = 4)
+#                          – EW-Triplet Σ_F   (n = 6)
+#                          – RH-Neutrinos N_R (n = 5)
+#  • Nur nötigste Quartik- und Yukawa-Beispiele
+#    (für 1-Loop-Smoke-Test vollkommen ausreichend)
+# =========================================================
+
+# YAML 1.1
+---
+Author: E8 Cascade Test
+Date: 2024
+Name: E8CascadeTest
+Groups: {U1Y: U1, SU2L: SU2, SU3c: SU3}
+
+Fermions: {
+    # Standard Model fermions (already included by default)
+    Q : {Gen: 3, Qnb: {U1Y: 1/6, SU2L: 2, SU3c: 3}},
+    L : {Gen: 3, Qnb: {U1Y: -1/2, SU2L: 2}},
+    uR : {Gen: 3, Qnb: {U1Y: 2/3, SU3c: 3}},
+    dR : {Gen: 3, Qnb: {U1Y: -1/3, SU3c: 3}},
+    eR : {Gen: 3, Qnb: {U1Y: -1}},
+    
+    # Electro-Weak-Triplet SigmaF (SU(2)-Adjoint, Hypercharge 0)
+    SigmaF : {Gen: 1, Qnb: {U1Y: 0, SU2L: 3, SU3c: 1}},
+    
+    # Three Right-Handed Neutrinos
+    NR : {Gen: 3, Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}}
+}
+
+RealScalars: {
+    # PQ-Skalar Phi real fields
+    phiR : {Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}},
+    phiI : {Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}}
+}
+
+ComplexScalars: {
+    # Standard Model Higgs
+    H : {RealFields: [Pi, Sigma], Norm: 1/sqrt(2), Qnb: {U1Y: 1/2, SU2L: 2}}
+}
+
+Potential: {
+    
+    Definitions: {
+        Htilde[i] : Eps[i,j]*Hbar[j]
+    },
+    
+    Yukawas: {
+        # Standard Model Yukawas
+        Yu : Qbar[i,a] Htilde[i] uR[a],
+        Yd : Qbar[i,a] H[i] dR[a],
+        Ye : Lbar[i] H[i] eR,
+        
+        # BSM Yukawa
+        yN : Lbar[i] Htilde[i] NR
+    },
+    
+    QuarticTerms: {
+        # Standard Model Higgs self-coupling
+        lambda : (Hbar[i] H[i])**2,
+        
+        # PQ scalar self-coupling
+        lPhi : (phiR*phiR + phiI*phiI)**2,
+        
+        # Higgs-Phi portal
+        lHphi : (Hbar[i] H[i]) * (phiR*phiR + phiI*phiI)
+    },
+    
+    ScalarMasses: {
+        # Standard Model Higgs mass
+        mu : -Hbar[i] H[i]
+    }
+}
+
+Vevs: {
+    vSM: Pi[2],
+    vPQ: phiR
+}
+
+# Gauge parameter setting (Landau gauge)
+GaugeParameter: 0
