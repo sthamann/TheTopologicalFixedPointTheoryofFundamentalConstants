@@ -4,18 +4,18 @@
 
 ## **Table of Contents**
 
-1. [Introduction and Motivation](https://claude.ai/chat/a6d3542c-8943-47e9-a373-94f12bedea90#1-introduction-and-motivation)
-2. [The 11-dimensional Starting Point](https://claude.ai/chat/a6d3542c-8943-47e9-a373-94f12bedea90#2-the-11-dimensional-starting-point)
-3. [Topological Compactification](https://claude.ai/chat/a6d3542c-8943-47e9-a373-94f12bedea90#3-topological-compactification)
-4. [The 6-dimensional Effective Theory](https://claude.ai/chat/a6d3542c-8943-47e9-a373-94f12bedea90#4-the-6-dimensional-effective-theory)
-5. [Renormalization Group Analysis](https://claude.ai/chat/a6d3542c-8943-47e9-a373-94f12bedea90#5-renormalization-group-analysis)
-6. [The Cubic Fixed Point Equation](https://claude.ai/chat/a6d3542c-8943-47e9-a373-94f12bedea90#6-the-cubic-fixed-point-equation)
-7. [Calculation of the Fine Structure Constant](https://claude.ai/chat/a6d3542c-8943-47e9-a373-94f12bedea90#7-calculation-of-the-fine-structure-constant)
-8. [The VEV Cascade and E₈ Structure](https://claude.ai/chat/a6d3542c-8943-47e9-a373-94f12bedea90#8-the-vev-cascade-and-e8-structure)
-9. [Physical Predictions](https://claude.ai/chat/a6d3542c-8943-47e9-a373-94f12bedea90#9-physical-predictions)
-10. [Mathematical Details and Calculations](https://claude.ai/chat/a6d3542c-8943-47e9-a373-94f12bedea90#10-mathematical-details-and-calculations)
-11. [Experimental Tests and Validation](https://claude.ai/chat/a6d3542c-8943-47e9-a373-94f12bedea90#11-experimental-tests-and-validation)
-12. [Summary and Outlook](https://claude.ai/chat/a6d3542c-8943-47e9-a373-94f12bedea90#12-summary-and-outlook)
+1. [Introduction and Motivation]
+2. [The 11-dimensional Starting Point]
+3. [Topological Compactification]
+4. [The 6-dimensional Effective Theory]
+5. [Renormalization Group Analysis]
+6. [The Cubic Fixed Point Equation]
+7. [Calculation of the Fine Structure Constant]
+8. [The VEV Cascade and E₈ Structure]
+9. [Physical Predictions]
+10. [Mathematical Details and Calculations]
+11. [Experimental Tests and Validation]
+12. [Summary and Outlook]
 
 ---
 
